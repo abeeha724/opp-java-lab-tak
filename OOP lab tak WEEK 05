@@ -1,0 +1,53 @@
+package rooms;
+
+
+public class Rooms {
+
+    
+    public static void main(String[] args) { 
+        class Room {
+    String roomType;
+    double size;
+
+    Room(String roomType, double size) {
+        this.roomType = roomType;
+        this.size = size;
+    }
+
+    void displayRoom() {
+        System.out.println("Room Type: " + roomType + ", Size: " + size + " sqm");
+    }
+}
+
+class House {
+    String address;
+    Room[] rooms;  
+
+    House(String address, Room[] rooms) {
+        this.address = address;
+        this.rooms = rooms;
+    }
+
+    void displayHouse() {
+        System.out.println("House Address: " + address);
+        for (Room room : rooms) {
+            room.displayRoom();
+        }
+    }
+}
+
+
+        Room livingRoom = new Room("Living Room", 25.0);
+        Room bedroom = new Room("Bedroom", 20.0);
+        Room kitchen = new Room("Kitchen", 15.0);
+
+        
+        Room[] rooms = {livingRoom, bedroom, kitchen};
+
+       
+        House house = new House("123 Main St", rooms);
+
+       
+        house.displayHouse();
+    }
+}
